@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+    <!-- 目标数据库 -->
+    <context id="MySqlTables" targetRuntime="MyBatis3">
+
+        <property name="javaFileEncoding" value="UTF-8"/>
+
+        <!-- 自定义注释 -->
+        <!--<commentGenerator type="test.reverseengineering.MyCommentGenerator"></commentGenerator>-->
+
+        <!-- 是否去除自动生成的注释 true：是 ： false:否    -->
+         <commentGenerator>
+                <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/lovely"
+                        userId="root"
+                        password="123456">
+
+            <property name="remarksReporting" value="true"/>
+        </jdbcConnection>
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!-- java实体类路径 -->
+        <javaModelGenerator targetPackage="org.gyl.model" targetProject="D:\program\idea\personal\lovely\lovegl\src\main\java" >
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!-- sqlmap xml -->
+        <sqlMapGenerator targetPackage="mapper"  targetProject="D:\program\idea\personal\lovely\lovegl\src\main\resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <!-- mapper -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="org.gyl.dao"  targetProject="D:\program\idea\personal\lovely\lovegl\src\main\java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <!-- 要逆向生成Dao的所有表 -->
+        <table schema="" tableName="gl_diary"
+               domainObjectName="Diary" >
+        </table>
+        <table schema="" tableName="gl_letter"
+               domainObjectName="Letter" >
+        </table>
+        <table schema="" tableName="gl_photo"
+               domainObjectName="Photo" >
+        </table>
+        <table schema="" tableName="gl_prop"
+               domainObjectName="Prop" >
+        </table>
+        <table schema="" tableName="gl_score"
+               domainObjectName="Score" >
+        </table>
+        <table schema="" tableName="gl_skill_release"
+               domainObjectName="SkillRelease" >
+        </table>
+        <table schema="" tableName="sys_dict"
+               domainObjectName="Dict" >
+        </table>
+
+        <table schema="" tableName="gl_task"
+               domainObjectName="Task" >
+        </table>
+        <table schema="" tableName="gl_user"
+               domainObjectName="User" >
+        </table>
+
+
+    </context>
+</generatorConfiguration>
